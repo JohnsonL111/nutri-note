@@ -1,0 +1,47 @@
+# Note, tested on command prompt (cmd) terminal -> the one built-in to intellij
+
+# Remove curl alias (run if it invokes-webRequest)
+Remove-item alias:curl
+
+POST http requests
+-----------------
+# Adding a food item
+curl -i -H "Content-Type: application/json" -X POST -d "{"JSON array here"}" localhost:8080/addFood
+E.g.,
+curl -i -H "Content-Type: application/json" -X POST -d '{\"consumableType\": \"food\", \"name\": \"sushi\", \"notes\": \"nope\", \"price\": \"12.3\", \"expiryDate\": \"2021-12-15T00:00:00\", \"weight\": \"6\"}' localhost:8080/addFood
+
+# Adding a drink item
+curl -i -H "Content-Type: application/json" -X POST -d "{"JSON array here"}" localhost:8080/addDrink
+E.g.,
+curl -i -H "Content-Type: application/json" -X POST -d '{\"consumableType\": \"drink\", \"name\": \"coke\", \"notes\": \"nope\", \"price\": \"12.3\", \"expiryDate\": \"2021-12-15T00:00:00\", \"volume\": \"6\"}' localhost:8080/addDrink
+
+# Removing a food item
+curl -i -H "Content-Type: application/json" -X POST -d "{"JSON array here"}" localhost:8080/removeFood
+E.g.,
+curl -i -H "Content-Type: application/json" -X POST -d '{\"consumableType\": \"food\", \"name\": \"sushi\", \"notes\": \"nope\", \"price\": \"12.3\", \"expiryDate\": \"2021-12-15T00:00:00\", \"weight\": \"6\"}' localhost:8080/removeFood
+
+# Removing a drink item
+curl -i -H "Content-Type: application/json" -X POST -d "{"JSON array here"}" localhost:8080/removeDrink
+E.g.,
+curl -i -H "Content-Type: application/json" -X POST -d '{\"consumableType\": \"drink\", \"name\": \"coke\", \"notes\": \"nope\", \"price\": \"12.3\", \"expiryDate\": \"2021-12-15T00:00:00\", \"volume\": \"6\"}' localhost:8080/removeDrink
+
+GET http requests
+-----------------
+# Ping end point
+curl -i -H "Content-Type: application/json" -X GET localhost:8080/ping
+
+# listing all items
+curl -i -H "Content-Type: application/json" -X GET localhost:8080/listAll
+
+# listing all expired items
+curl -i -H "Content-Type: application/json" -X GET localhost:8080/listExpired
+
+# listing all non-expired items
+curl -i -H "Content-Type: application/json" -X GET localhost:8080/listNonExpired
+
+# listing all items expiring in 7 days
+curl -i -H "Content-Type: application/json" -X GET localhost:8080/listExpiringIn7Days
+
+# exit the application (saves the consumable list!)
+curl -i -H "Content-Type: application/json" -X GET localhost:8080/exit
+
