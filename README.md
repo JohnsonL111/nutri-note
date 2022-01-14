@@ -1,5 +1,3 @@
-# Credits to: CMPT 213: OOD in Java A4
-
 - A GUI app to help you keep track of consumable item information </br> 
 - Consumable item info is saved onto a RESTful server. 
 
