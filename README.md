@@ -1,5 +1,8 @@
-- A GUI app to help you keep track of consumable item information </br> 
-- Consumable item info is saved onto a RESTful server. 
+**Built With**
+-----------
+- Java Swing GUI front-end
+- Spring Boot back-end 
+- HTTP Client API using RESTful methods to communicate between front and back-end
 
 GUI (Client-side) Functionality
 ----------------------------------
